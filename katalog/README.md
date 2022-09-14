@@ -1,10 +1,12 @@
 # **PBP Tugas 2**
 
-## **Nama   : Jihan Syafa Kamila**
-## **NPM    : 2106751303**
-## **Kelas  : B**
+**Nama   : Jihan Syafa Kamila**
 
-#
+**NPM    : 2106751303**
+
+**Kelas  : B**
+
+
 
 ## Link deploy Tugas 2 : 
 **http://pbp-tugas2-jihansyafakamila.herokuapp.com/katalog/**
@@ -30,7 +32,6 @@ Penjelasan :
 
 ## Alasan menggunakan Virtual Environment
 
-#
 - *Virtual environment* merupakan sebuah *tools* atau alat yang berfungsi untuk pembuatan lingkungan yang terisolasi untuk sebuah proyek. *Virtual environment* ini akan mengisolasi *dependencies* yang dibutuhkan oleh sebuah proyek yang terisolasi atau terpisah dari proyek yang lain. Dengan demikian, perubahan yang dilakukan pada satu proyek tidak akan mempengaruhi proyek lain.
 
 - Sebuah aplikasi web berbasis Django tetap dapat dibuat tanpa menggunakan *virtual environment*. Namun, tetap perlu dipastikan bahwa modul-modul atau *libraries* global yang berada di perangkat, tempat untuk menjalankan aplikasi, memiliki *dependencies* yang sama dengan *dependencies* yang dibutuhkan oleh aplikasi tersebut.
@@ -39,7 +40,6 @@ Penjelasan :
 
 ## Implementasi Langkah-Langkah Pengerjaan Tugas 2
 
-#
 
 1. Membuat fungsi `show_catalog()` yang menerima parameter "request" pada *file* `views.py` yang berada di folder `katalog`.
 
