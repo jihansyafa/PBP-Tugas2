@@ -1,0 +1,111 @@
+[
+    {
+        "model": "mywatchlist.mywatchlist",
+        "pk": 1,
+        "fields": {
+            "watched": "Watched",
+            "title": "Harry Potter and The Philosopher's Stone",
+            "rating": 5,
+            "release_date": "November 19th, 2001",
+            "review": "Harry Potter an The Philosopher's Stone, a mix of fantasy and adventure, is the perfet opening for the rest of the Harry Potter Movies. Watching this movie was magical and it is definitely a fun watch."
+        }
+    },
+    {
+        "model": "mywatchlist.mywatchlist",
+        "pk": 2,
+        "fields": {
+            "watched": "Watched",
+            "title": "Flipped",
+            "rating": 4,
+            "release_date": "August 6th, 2010",
+            "review": "Flipped is a beautiful coming of age movie. It is a light watch type of movie. Although it is a good watch, it doesn't give a lasting impression."
+        }
+    },
+    {
+        "model": "mywatchlist.mywatchlist",
+        "pk": 3,
+        "fields": {
+            "watched": "Watched",
+            "title": "Avenger : End Game",
+            "rating": 5,
+            "release_date": "April 24th, 2019",
+            "review": "Avengers : End Game is a thrilling movie. The action is insane and it gets you on the edge of your seat. Also, some of the movie's plots makes you speechless."
+        }
+    },
+    {
+        "model": "mywatchlist.mywatchlist",
+        "pk": 4,
+        "fields": {
+            "watched": "Watched",
+            "title": "Divergent",
+            "rating": 5,
+            "release_date": "March 20, 2014",
+            "review": "Divergent is an enjoyable and entertaining action movie. This movie has a strong female lead character, you can see the huge development in her condfidence over the movies. Overall it is great watch."
+        }
+    },
+    {
+        "model": "mywatchlist.mywatchlist",
+        "pk": 5,
+        "fields": {
+            "watched": "Watched",
+            "title": "The Hunger Games",
+            "rating": 5,
+            "release_date": "March 22nd, 2012",
+            "review": "The Hunger Games is a movie adapted from a book series. The book series is amazing and the movies did a pretty good job of portraying the characters. They did leave out some stuff that I personally think should have been there, but the movies were still absolutely amazing."
+        }
+    },
+    {
+        "model": "mywatchlist.mywatchlist",
+        "pk": 6,
+        "fields": {
+            "watched": "Watched",
+            "title": "Interstellar",
+            "rating": 5,
+            "release_date": "November 6th, 2014",
+            "review": "Overall Interstellar is a mind-blowing movie with fantastic visual's, interesting story line and the movie will keep you interested till the end. Although, the movie's concept of time and space is a little confusing."
+        }
+    },
+    {
+        "model": "mywatchlist.mywatchlist",
+        "pk": 7,
+        "fields": {
+            "watched": "Watched",
+            "title": "Encanto",
+            "rating": 5,
+            "release_date": "November 24th, 2021",
+            "review": "The animation quality of Encanto was spectacular. Everything was so realistic and detailed yet so Disney-like at the same time. The story line is fun and the songs are addicting. This movie is also suitable for all ages."
+        }
+    },
+    {
+        "model": "mywatchlist.mywatchlist",
+        "pk": 8,
+        "fields": {
+            "watched": "Haven't Watched",
+            "title": "The Notebook",
+            "rating": "-",
+            "release_date": "June 24th, 2004",
+            "review": "The Notebook is said to be an all time classic love story. It is also said that this movie has some very beautiful scenes that is heart-wrenching and sometimes even make people cry."
+        }
+    },
+    {
+        "model": "mywatchlist.mywatchlist",
+        "pk": 9,
+        "fields": {
+            "watched": "Haven't Watched",
+            "title": "Don't Look Up",
+            "rating": "-",
+            "release_date": "December 10th, 2021",
+            "review": "This movie is said to be a fabulous satirical, but both dark and mildly ridiculous comedy which pokes fun at almost all aspects of popular culture which currently plagues society, particularly in the US. Not only that, the casts that star in this movie are all amazing actors."
+        }
+    },{
+        "model": "mywatchlist.mywatchlist",
+        "pk": 10,
+        "fields": {
+            "watched": "Haven't Watched",
+            "title": "Oblivion",
+            "rating": "-",
+            "release_date": "April 10th, 2013",
+            "review": "Oblivion is said to be an underrated movie. There are some very effective blends of large scale epic story lines along with some intimately personal character arcs and developments which carry over to some insightful parallels with real world scenarios."
+        }
+    }
+]
