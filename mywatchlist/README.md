@@ -185,4 +185,8 @@ urlpatterns = [
 ![Screenshot (483)](https://user-images.githubusercontent.com/88375711/191636212-0cd7faaa-d611-4c4d-a422-62a70438ffa1.png)
 
 - JSON
+<<<<<<< HEAD
 ![Screenshot (484)](https://user-images.githubusercontent.com/88375711/191636215-9dd8e012-77ae-494d-bda5-91e49fceb1b5.png)
+=======
+![Screenshot (484)](https://user-images.githubusercontent.com/88375711/191636215-9dd8e012-77ae-494d-bda5-91e49fceb1b5.png)
+>>>>>>> f1c08fa (Menyelesaikan pekerjaan wajib Tugas 4)

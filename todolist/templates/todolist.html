@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+<title>My To Do List</title>
+{% endblock meta %}
+
+{% block content %}
+
+    <h1>{{user.username}}'s Tasks</h1>
+    <a href="{% url 'todolist:create_task' %}"><button>New Task</button></a></td>
+
+    <table>
+        <tr>
+        <th>Task</th>
+        <th>Description</th>
+        <th>Created On</th>
+        </tr>
+        {% comment %} Add the data below this line {% endcomment %}
+        {% for task in todolist_data %}
+        <tr>
+            <td>{{task.title}}</td>
+            <td>{{task.description}}</td>
+            <td>{{task.date}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h5>Sesi terakhir login: {{ last_login }}</h5>
+
+    <a href="{% url 'todolist:logout' %}"><button>Logout</button></a></td>
+
+{% endblock content %}
