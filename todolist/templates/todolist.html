@@ -6,27 +6,53 @@
 
 {% block content %}
 
-    <h1>{{user.username}}'s Tasks</h1>
-    <a href="{% url 'todolist:create_task' %}"><button>New Task</button></a></td>
+    <head>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'todolist.css' %}">
+        <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    </head>
 
-    <table>
-        <tr>
-        <th>Task</th>
-        <th>Description</th>
-        <th>Created On</th>
-        </tr>
+    <h1>Hi {{user.username}}, this is your To Do List!</h1>
+
+    <a href="{% url 'todolist:create_task' %}">
+    <button class = "new-task-button">New Task</button></a></td>
+
+    <a href="{% url 'todolist:logout' %}">
+    <button class = "logout-button">Logout</button></a></td>
+
+    <table class = "content-table">
+        <thead>
+            <tr>
+                <th>Change Status</th>
+                <th>Status</th>
+                <th>Task</th>
+                <th>Description</th>
+                <th>Created On</th>
+                <th>Delete Task</th>
+            </tr>
+        </thead>
         {% comment %} Add the data below this line {% endcomment %}
         {% for task in todolist_data %}
         <tr>
+            <td>
+                <button><a href="task-status/{{task.pk}}">Change</a></button>
+            </td>
+
+            {% if task.is_finished == True%}
+            <td>✅Done</td>
+            {% else %}
+            <td>❌Not Done</td>
+            {% endif %}
+
             <td>{{task.title}}</td>
             <td>{{task.description}}</td>
             <td>{{task.date}}</td>
+            <td>
+                <a href="delete-task/{{task.pk}}"><button>🗑️</button></a></td>
+            </td>
         </tr>
         {% endfor %}
     </table>
 
-    <h5>Sesi terakhir login: {{ last_login }}</h5>
-
-    <a href="{% url 'todolist:logout' %}"><button>Logout</button></a></td>
 
 {% endblock content %}

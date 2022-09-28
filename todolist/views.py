@@ -14,8 +14,7 @@ def show_todolist(request):
     todolist_data = Task.objects.filter(user=request.user)
     context = {
         'todolist_data': todolist_data,
-        'user' : request.user,
-        'last_login': request.COOKIES['last_login']
+        'user' : request.user
     }
     return render(request, "todolist.html", context)
 
@@ -73,3 +72,18 @@ def logout_user(request):
     response = HttpResponseRedirect(reverse('todolist:login'))
     response.delete_cookie('last_login')
     return response
+
+
+@login_required(login_url="/todolist/login/")
+def task_status(request, id):
+    task = Task.objects.get(id=id)
+    task.is_finished = not task.is_finished
+    task.save(update_fields=["is_finished"])
+    return redirect('todolist:show_todolist')
+
+
+@login_required(login_url="/todolist/login/")
+def delete_task(request, id):
+    task = Task.objects.get(id=id)
+    task.delete()
+    return redirect('todolist:show_todolist')
