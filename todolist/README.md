@@ -264,6 +264,7 @@ is_finished = models.BooleanField(default=False)
 - Membuat dua kolom baru pada tabel task yang berisi status penyelesaian task dan tombol untuk mengubah status penyelesaian suatu task menjadi Selesai atau Belum Selesai.
 
 ```
+...
 {% for task in todolist_data %}
 <tr>
     <td>
@@ -275,10 +276,9 @@ is_finished = models.BooleanField(default=False)
     {% else %}
     <td>❌Not Done</td>
     {% endif %}
-
-    ...
+...
 ```
-Button ubah status akan diproses oleh fungsi` task_status` dengan potongan kode berikut.
+Button ubah status akan diproses oleh fungsi `task_status` dengan potongan kode berikut.
 
 ```
 def task_status(request, id):
