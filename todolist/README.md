@@ -42,7 +42,7 @@ Elemen `<form>` dapat dibuat secara manual tanpa menggunakan generator seperti `
 
 4. Data yang diterima akan dicatat oleh form sehingga apabila _user_ melakukan _submit_ maka form akan dikirim sesuai dengan deklarasi action dan method yang sudah dilakukan sebelumnya.
 
-## Proses alur data dari submisi yang dilakukan oleh pengguna melalui HTML form, penyimpanan data pada database, hingga munculnya data yang telah disimpan pada template HTML.
+# Proses alur data dari submisi yang dilakukan oleh pengguna melalui HTML form, penyimpanan data pada database, hingga munculnya data yang telah disimpan pada template HTML.
 
 1.  Input dari user, sesuai dengan permintaan form, akan dibawa oleh _request_ yang nantinya akan disimpan ke dalam suatu variable oleh fungsi tujuan di `views.py`. 
 
