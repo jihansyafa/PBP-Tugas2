@@ -10,7 +10,7 @@
 
 🔗[**To Do List**](https://pbp-tugas2-jihansyafakamila.herokuapp.com/todolist/)
 
-# Apa kegunaan {% csrf_token %} pada elemen <form>? Apa yang terjadi apabila tidak ada potongan kode tersebut pada elemen <form>?
+## Apa kegunaan {% csrf_token %} pada elemen <form>? Apa yang terjadi apabila tidak ada potongan kode tersebut pada elemen <form>?
 
 CSRF (_Cross Site Request Forgery_) merupakan salah satu serangan (_attack_) yang dapat menyerang sebuah situs web. _Built in protection_ yang dimiliki Django, yaitu `csrf_token`, berfungsi adalah untuk mengatasi kemungkinan terjadinya serangan tersebut. Pengimplementasiannya cukup dilakukan dengan menambahkan potongan kode `{% csrf_token %}` ke dalam _tag_ `<form>` di `template`.
 
@@ -29,7 +29,7 @@ CSRF (_Cross Site Request Forgery_) merupakan salah satu serangan (_attack_) yan
 
 Apabila `{% csrf_token %}` tidak ditambahkan ke dalam tag `<form>` maka permintaan tidak akan dieksekusi atau web akan _reject_ permintaan dengan mengeluarkan error. Selain itu, _attacker_ dapat menggunakan _user's authenticated state_ untuk memaksa pengeksekusian tindakan atau pengiriman permintaan yang tidak sesuai dengan keingan _user_. Jika permintaan yang tidak diinginkan oleh _user_ tersebut berhasil dieksekusi, maka serangan tersebut dapat membahayakan situs web.
 
-# Apakah kita dapat membuat elemen <form> secara manual (tanpa menggunakan generator seperti {{ form.as_table }})? Bagaimana cara membuat <form> secara manual?
+## Apakah kita dapat membuat elemen <form> secara manual (tanpa menggunakan generator seperti {{ form.as_table }})? Bagaimana cara membuat <form> secara manual?
 
 Elemen `<form>` dapat dibuat secara manual tanpa menggunakan generator seperti `{{ form.as_table }}`. Berikut adalah gambaran besar cara membuat `<form>` secara manual.
 
@@ -41,7 +41,7 @@ Elemen `<form>` dapat dibuat secara manual tanpa menggunakan generator seperti `
 
 4. Data yang diterima akan dicatat oleh form sehingga apabila _user_ melakukan _submit_ maka form akan dikirim sesuai dengan deklarasi action dan method yang sudah dilakukan sebelumnya.
 
-# Proses alur data dari submisi yang dilakukan oleh pengguna melalui HTML form, penyimpanan data pada database, hingga munculnya data yang telah disimpan pada template HTML.
+## Proses alur data dari submisi yang dilakukan oleh pengguna melalui HTML form, penyimpanan data pada database, hingga munculnya data yang telah disimpan pada template HTML.
 
 1.  Input dari user, sesuai dengan permintaan form, akan dibawa oleh _request_ yang nantinya akan disimpan ke dalam suatu variable oleh fungsi tujuan di `views.py`. 
 
@@ -252,7 +252,7 @@ Terlebih dahulu melakukan add, commit, dan push ke repository github. Pada tugas
 ![User1_todolist](https://user-images.githubusercontent.com/88375711/192874506-6fdbd656-72c4-48e9-88ec-ae8b2ff66e0a.jpg)
 
 
-# Implementasi Bonus
+## Implementasi Bonus
 
 - Membuat atribut is_finished pada model Task (dengan default value False).
 
@@ -290,9 +290,11 @@ def task_status(request, id):
 - Menambahkan kolom baru pada tabel task yang berisi tombol untuk menghapus suatu task.
 
 ```
+...
 <td>
     <a href="delete-task/{{task.pk}}"><button>🗑️</button></a></td>
 </td>
+...
 ```
 
 Button hapus akan diproses oleh fungsi `delete_task` dengan perintah `task.delete()`.
