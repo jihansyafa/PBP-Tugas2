@@ -9,8 +9,9 @@
 # Link Tugas 4
 
 🔗[**To Do List**](https://pbp-tugas2-jihansyafakamila.herokuapp.com/todolist/)
+#
 
-## Apa kegunaan {% csrf_token %} pada elemen <form>? Apa yang terjadi apabila tidak ada potongan kode tersebut pada elemen <form>?
+# Apa kegunaan {% csrf_token %} pada elemen <form>? Apa yang terjadi apabila tidak ada potongan kode tersebut pada elemen <form>?
 
 CSRF (_Cross Site Request Forgery_) merupakan salah satu serangan (_attack_) yang dapat menyerang sebuah situs web. _Built in protection_ yang dimiliki Django, yaitu `csrf_token`, berfungsi adalah untuk mengatasi kemungkinan terjadinya serangan tersebut. Pengimplementasiannya cukup dilakukan dengan menambahkan potongan kode `{% csrf_token %}` ke dalam _tag_ `<form>` di `template`.
 
@@ -29,7 +30,7 @@ CSRF (_Cross Site Request Forgery_) merupakan salah satu serangan (_attack_) yan
 
 Apabila `{% csrf_token %}` tidak ditambahkan ke dalam tag `<form>` maka permintaan tidak akan dieksekusi atau web akan _reject_ permintaan dengan mengeluarkan error. Selain itu, _attacker_ dapat menggunakan _user's authenticated state_ untuk memaksa pengeksekusian tindakan atau pengiriman permintaan yang tidak sesuai dengan keingan _user_. Jika permintaan yang tidak diinginkan oleh _user_ tersebut berhasil dieksekusi, maka serangan tersebut dapat membahayakan situs web.
 
-## Apakah kita dapat membuat elemen <form> secara manual (tanpa menggunakan generator seperti {{ form.as_table }})? Bagaimana cara membuat <form> secara manual?
+# Apakah kita dapat membuat elemen <form> secara manual (tanpa menggunakan generator seperti {{ form.as_table }})? Bagaimana cara membuat <form> secara manual?
 
 Elemen `<form>` dapat dibuat secara manual tanpa menggunakan generator seperti `{{ form.as_table }}`. Berikut adalah gambaran besar cara membuat `<form>` secara manual.
 
