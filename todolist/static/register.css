@@ -2,7 +2,7 @@ body {
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(to right bottom, #ffffff,#d17ea3);
     height: 100vh;
-    margin-top: 50px;
+    margin: auto;
   }
 
   setfield {
@@ -11,8 +11,9 @@ body {
     left: 50%;
     transform: translate(-50%, -50%); 
     border-radius: 20px;
-    width: 900px;
+    width: 860px;
     background: #ffffff;
+    margin-top: auto;
     border-style: none;
     padding-left: 20px;
     padding-top: 20px;
