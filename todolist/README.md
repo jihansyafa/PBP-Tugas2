@@ -46,7 +46,7 @@ Elemen `<form>` dapat dibuat secara manual tanpa menggunakan generator seperti `
 
 1.  Input dari user, sesuai dengan permintaan form, akan dibawa oleh _request_ yang nantinya akan disimpan ke dalam suatu variable oleh fungsi tujuan di `views.py`. 
 
-2. Akan diinisasi objek baru sesuai dengan _request_ dari _user_ (input data dari _user_). Objek tersebut dapat disimpan ke dalam database menggunakan perintah `<objek>.save()`
+2. Akan diinisiasi objek baru sesuai dengan _request_ dari _user_ (input data dari _user_). Objek tersebut dapat disimpan ke dalam database menggunakan perintah `<objek>.save()`
 
 ```
 if request.method == "POST":
