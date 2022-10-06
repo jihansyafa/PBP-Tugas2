@@ -463,7 +463,4 @@ Untuk menambahkan efek saat melakukan hover pada cards, dibuat sebuah class `.ca
     box-shadow: 0 8px 14px 0 #735d95;
 }
 ```
-
 Dengan demikian, pada saat kita melakukan hover pada card, akan terjadi perubahan _styling_ card.
-=======
->>>>>>> bd10f1b44018a44ab94332b386abfec516b0cbb2
