@@ -9,6 +9,7 @@
 # Link Tugas 4
 
 🔗[**To Do List**](https://pbp-tugas2-jihansyafakamila.herokuapp.com/todolist/)
+#
 
 # Apa kegunaan {% csrf_token %} pada elemen <form>? Apa yang terjadi apabila tidak ada potongan kode tersebut pada elemen <form>?
 
@@ -45,7 +46,7 @@ Elemen `<form>` dapat dibuat secara manual tanpa menggunakan generator seperti `
 
 1.  Input dari user, sesuai dengan permintaan form, akan dibawa oleh _request_ yang nantinya akan disimpan ke dalam suatu variable oleh fungsi tujuan di `views.py`. 
 
-2. Akan diinisasi objek baru sesuai dengan _request_ dari _user_ (input data dari _user_). Objek tersebut dapat disimpan ke dalam database menggunakan perintah `<objek>.save()`
+2. Akan diinisiasi objek baru sesuai dengan _request_ dari _user_ (input data dari _user_). Objek tersebut dapat disimpan ke dalam database menggunakan perintah `<objek>.save()`
 
 ```
 if request.method == "POST":
@@ -252,7 +253,7 @@ Terlebih dahulu melakukan add, commit, dan push ke repository github. Pada tugas
 ![User1_todolist](https://user-images.githubusercontent.com/88375711/192874506-6fdbd656-72c4-48e9-88ec-ae8b2ff66e0a.jpg)
 
 
-# Implementasi Bonus
+## Implementasi Bonus
 
 - Membuat atribut is_finished pada model Task (dengan default value False).
 
@@ -263,6 +264,7 @@ is_finished = models.BooleanField(default=False)
 - Membuat dua kolom baru pada tabel task yang berisi status penyelesaian task dan tombol untuk mengubah status penyelesaian suatu task menjadi Selesai atau Belum Selesai.
 
 ```
+...
 {% for task in todolist_data %}
 <tr>
     <td>
@@ -274,10 +276,9 @@ is_finished = models.BooleanField(default=False)
     {% else %}
     <td>❌Not Done</td>
     {% endif %}
-
-    ...
+...
 ```
-Button ubah status akan diproses oleh fungsi` task_status` dengan potongan kode berikut.
+Button ubah status akan diproses oleh fungsi `task_status` dengan potongan kode berikut.
 
 ```
 def task_status(request, id):
@@ -290,12 +291,15 @@ def task_status(request, id):
 - Menambahkan kolom baru pada tabel task yang berisi tombol untuk menghapus suatu task.
 
 ```
+...
 <td>
     <a href="delete-task/{{task.pk}}"><button>🗑️</button></a></td>
 </td>
+...
 ```
 
 Button hapus akan diproses oleh fungsi `delete_task` dengan perintah `task.delete()`.
+<<<<<<< HEAD
 
 # **Tugas 5: Web Design Using HTML, CSS, and CSS Framework**
 
@@ -461,3 +465,5 @@ Untuk menambahkan efek saat melakukan hover pada cards, dibuat sebuah class `.ca
 ```
 
 Dengan demikian, pada saat kita melakukan hover pada card, akan terjadi perubahan _styling_ card.
+=======
+>>>>>>> bd10f1b44018a44ab94332b386abfec516b0cbb2
