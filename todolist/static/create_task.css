@@ -62,7 +62,7 @@ body {
 
   .set-responsive {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
   }
   
   
