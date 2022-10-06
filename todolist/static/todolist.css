@@ -6,6 +6,7 @@ html {
     margin-top: auto;
     text-align: center;
     background: linear-gradient(to bottom, #f7e9f7, #bea0ef);
+    min-height: 100%;
 }
 
 .card {
@@ -31,6 +32,12 @@ html {
     font-weight: bold;
 }
 
+.new-task-button:hover {
+    background-color:  #14666f;
+    color:rgb(255, 255, 255);
+    cursor: pointer; 
+}
+
 .logout-button {
     background-color: #ffa0a3;
     padding: 10px 30px;
@@ -38,6 +45,12 @@ html {
     border-radius: 6px;
     font-size: 14px;
     font-weight: bold;
+}
+
+.logout-button:hover {
+    background-color:  #b64548; 
+    color:rgb(255, 255, 255);
+    cursor: pointer;
 }
 
 .task-title {
@@ -90,5 +103,5 @@ html {
 
 .set-responsive {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
 }

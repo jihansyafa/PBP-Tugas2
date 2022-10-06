@@ -57,6 +57,7 @@ body {
   input[type="submit"]:hover {
     border-color: #000000;
     transition: .5s;
+    cursor: pointer;
   }
 
   .set-responsive {

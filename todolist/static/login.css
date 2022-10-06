@@ -52,6 +52,7 @@ input[type="SUBMIT"] {
 input[type="submit"]:hover {
     border-color: #000000;
     transition: .5s;
+    cursor: pointer;
 }
 
 .signup_link {
@@ -68,6 +69,7 @@ input[type="submit"]:hover {
 
 .signup_link a:hover {
     text-decoration: underline;
+    cursor: pointer;
 }
 
 .set-responsive {

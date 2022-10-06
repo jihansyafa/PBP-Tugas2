@@ -13,7 +13,6 @@
 </head>
 
 <html>
-    <div class = "set-responsive">
     <h1>Hi {{user.username}}, this is your To Do List!</h1>
 
     <a href="{% url 'todolist:create_task' %}">
@@ -24,7 +23,8 @@
 
     {% comment %} Add the data below this line {% endcomment %}
     {% for task in todolist_data %}
-
+    
+    <div class = "set-responsive">
     <div class = "card">
         <p class = "task-title">{{task.title}}</p>
         <p class = "task-description">{{task.description}}</p>
