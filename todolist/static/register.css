@@ -5,7 +5,7 @@ body {
     margin: auto;
   }
 
-  setfield {
+setfield {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -17,21 +17,21 @@ body {
     border-style: none;
     padding-left: 20px;
     padding-top: 20px;
-  }
-  
-  .register {
+}
+
+.register {
     text-align: left;
     padding: 0 5px ;
-  }
+}
 
-  form .txt_field {
+form .txt_field {
     position: center;
     border-bottom: 2px solid #adadad;
     margin: 30px;
     padding: 5px;
-  }
-  
-  .txt_field input {
+}
+
+.txt_field input {
     width: 100%;
     padding: 5px;
     height: 40px;
@@ -40,9 +40,9 @@ body {
     border: none;
     outline: none;
     background: none;
-  }
-  
-  input[type="SUBMIT"] {
+}
+
+input[type="SUBMIT"] {
     width: 20%;
     height: 40px;
     border: 1px solid;
@@ -54,9 +54,14 @@ body {
     font-family: 'Poppins';
     margin-top: 10px;
     margin-bottom: 10px;
-  }
-  
-  input[type="submit"]:hover {
+}
+
+input[type="submit"]:hover {
     border-color: #000000;
     transition: .5s;
-  }
+}
+
+.set-responsive {
+    display: flex;
+    justify-content: space-around;
+ }

@@ -296,3 +296,168 @@ def task_status(request, id):
 ```
 
 Button hapus akan diproses oleh fungsi `delete_task` dengan perintah `task.delete()`.
+
+# **Tugas 5: Web Design Using HTML, CSS, and CSS Framework**
+
+# Perbedaan Inline, Internal, dan External CSS serta kelebihan dan kekurangan dari masing-masing style
+
+**1. Inline CSS**
+
+Inline CSS merupakan kode CSS yang ditulis langsung pada atribut elemen atau  tag HTML untuk menambahkan atribut _style_. Contohnya adalah sebagai berikut.
+
+`<h1 style="color:navy; font-size:12px">This is a inline CSS!</h1>`
+
+- Kelebihan dari inline CSS adalah mudah digunakan apabila kita ingin melakukan modifikasi _style_ pada elemen tertentu di HTML. Selain itu, inline CSS juga dapat dimanfaatkan jika kita ingin mengubah _style_ dengan cepat karena tidak perlu membuat _class_ atau _file_ baru.
+
+- Kekurangan dari inline CSS adalah apabila kita ingin menerapkan _style_ pada setiap tag atau elemen di HTML, maka isi dari file HTML akan terlihat kurang rapi atau berantakan.
+
+**2. Internal CSS**
+Internal CSS merupakan kode CSS yang ditulis dalam tag `<style>` yang nantinya ditulis di header HTML. Contohnya adalah sebagai berikut.
+
+```
+...
+<head>
+<style>
+    .text-title{
+    font-size:12px;
+    font-family: ‘Poppins’;
+    }
+</style>
+</head>
+
+<body>
+    <p class="text-title">This is an example of internal CSS</p>
+</body>
+...
+```
+
+- Kelebihan dari internal CSS adalah lebih mudah digunakan apabila kita ingin memberi beragam _style-style_ hanya pada satu file atau halaman HTML sehingga tidak perlu membuat file CSS secara terpisah.
+
+- Kekurangan dari internal CSS adalah _loading time_ yang lebih tinggi karena modifikasi _style-style_ ditambahkan secara langsung pada file HTML, di mana kode CSS dan HTML nya berada di satu halaman file HTML>
+
+**3. External CSS**
+External CSS merupakan kode CSS yang ditulis dalam file CSS terpisah dari file HTML. Nantinya, pada file HTML akan dilakukan referensi terhadap file CSS dengan menambahkan tag `<link>`, di dalam `<head>`. Contohnya adalah sebagai berikut.
+
+```
+<head>
+  <link rel="stylesheet" type="text/css" href="namaFile.css" />
+</head>
+```
+
+- Kelebihan dari external CSS adalah struktur file HTML menjadi lebih rapi karena kode-kode untuk _styling_ ditulis pada file CSS terpisah. Selain itu, file CSS juga dapat digunakan untuk banyak file HTML sehingga tidak perlu menerapkan kode yang sama pada setiap file HTML, cukup melakukan referensi terhadap file CSS adalah.
+
+- Kekurangan dari external CSS adalah halaman pada situs web butuh waktu untuk mengakses _styling_ pada file CSS. Oleh karena itu, halaman belum ditampil dengan sempurna sampai file CSS diakses.
+
+# Tag HTML yang diketahui
+
+1. `<header>` : Mendefinisikan bagian header dari halaman HTML.
+2. `<button>` : Membuat tombol yang _clickable_.
+3. `<div>`    : Menspesifikasi _division_ atau _section_ pada file.
+4. `<html>`   : Mendefinisikan _root_ halaman HTML.
+5. `<style>`  : Memasukkan informasi _style_ dari file CSS ke _head_ file HTML.
+6. `<thead>`  : Mengelompokkan beberapa baris yang mendeskripsikan label-label kolom dari sebuah tabel.
+7. `<title>`  : Mendefinisikan judul dari halaman HTML.
+8. `<audio>`  : Menyisipkan atau menambahkan audio.
+9. `<footer>` : Mendefinisikan bagian footer dari halaman.
+10. `<nav>`   : Mendefinisikan link navigasi.
+
+# Tipe-tipe CSS Selector
+
+Terdapat tiga jenis _selector_ pada CSS, di antaranya adalah sebagai berikut.
+
+**1. ID Selectors**
+ID Selectors, yang kodenya diawali dengan `#` pada CSS, menggunakan ID pada tag sebagai selectornya.
+
+**2. Classes Selectors**
+Classes Selectors, yang kodenya diawali dengan `.` pada CSS, menggunakan class pada tag sebagai selectornya.
+
+**3. Element Selector**
+Element Selector memanfaatkan tag HTML sebagai selectornya untuk mengubah atau memodifikasi _style_ yang terdapat dalam tag tersebut.
+
+# Implementasi Checklist dan BONUS
+
+**✅ Kustomisasi template untuk halaman login, register, dan create-task semenarik mungkin.**
+
+1. Membuat folder bernama `static` pada folder `todolist`.
+2. Membuat file-file CSS di dalam folder `static`, yaitu `login.css`, `register.css`, `create_task.css`, `logout.css` yang nantinya dapat dimanfaatkan untuk _styling_ pada file HTML.
+3. Di dalam setiap file CSS tersebut, terdapat pendefinisian class dan element _styling_ yang ingin ditampilkan pada halaman situs web.
+4. Agar _style_ pada file CSS tersebut dapat diakses oleh file HTML, maka ditambahkan potongan kode berikut di file HTML.
+
+```
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'todolist.css' %}">
+</head>
+```
+Dengan demikian, file HTML akan melakukan _loading static_, kemudian melalui tag link, diakses stylesheet dari file CSS yang sesuai.
+
+**✅Kustomisasi halaman utama todo list menggunakan cards. (Satu card mengandung satu task).**
+
+Kustomisasi dilakukan dengan membuat file external CSS. Selanjutnya, dibuat _class_ `.card` pada file `todolist.css`, dengan potongan kode berikut.
+
+```
+.card {
+    width: 700px;
+    box-shadow: 2px 3px 2px rgba(0,0,0,0.2);
+    background-color: #ffffff;
+    transition: 0.3s;
+    border-radius: 10px;
+    padding: 10px; 
+    margin: 10px auto;
+}
+```
+
+Agar setiap card menampilkan satu task, maka dipanggil atau digunakan class card di dalam perulangan pada task di file HTML.
+
+```
+...
+{% for task in todolist_data %}
+    <div class = "card">
+        <p class = "task-title">{{task.title}}</p>
+        <p class = "task-description">{{task.description}}</p>
+        <p class = "task-date"> Created on : {{task.date}}</p>
+
+        ...
+
+        {% endif %}
+    </div>
+...
+{% endfor %}     
+```
+
+**✅ Membuat keempat halaman yang dikustomisasi menjadi responsive.**
+
+1. Mengatur `viewport` dengan memasukkan tag meta viewport pada head file HTML. Hal ini bertujuan supaya halaman situs web bisa responsive. Tag meta viewport akan mengatur dimensi dan skala halaman situs web.
+
+2. Selanjutnya, perlu diatur _value_ dari meta viewport, yaitu `content="width=device-width` agar halaman situs web dapat menyesuaikan lebar.
+
+3. Menambahkan _value_ `initial-scale=1.0 `  untuk menjaga ukuran CSS pixels dan device-independent pixels berukuran 1:1 sehingga halaman agar halaman tetap dalam mode _landscape_.
+
+Pada folder PBP-Tugas2, di dalam file `base.html` pada folder `templates` telah terdapat tag meta viewport sebagai berikut.
+
+```
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+```
+
+Tag meta viewport pada setiap file HTML tidak perlu ditambahkan lagi karena aplikasi `todolist` sudah meng-_extend_ file `base.html`.
+
+4. Membuat flexbox pada file CSS dengan menambahkan potongan kode class berikut.
+
+```
+.set-responsive {
+    display: flex;
+    justify-content: space-around;
+}
+```
+
+**✅ Menambahkan efek ketika melakukan hover pada cards di halaman utama todolist.**
+
+Untuk menambahkan efek saat melakukan hover pada cards, dibuat sebuah class `.card:hover`.
+
+```
+.card:hover {
+    box-shadow: 0 8px 14px 0 #735d95;
+}
+```
+
+Dengan demikian, pada saat kita melakukan hover pada card, akan terjadi perubahan _styling_ card.

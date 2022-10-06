@@ -6,49 +6,53 @@
 
 {% block content %}
 
-    <head>
-        {% load static %}
-        <link rel="stylesheet" href="{% static 'login.css' %}">
-        <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-    </head>
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'login.css' %}">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+</head>
 
-        <div class = "login">
+<html>
+<div class = "set-responsive">
+    <div class = "login">
 
-            <h1>Welcome, please login!</h1>
+        <h1>Welcome, please login!</h1>
 
-            <setfield>
-            <form method="POST" action="">
-                {% csrf_token %}
-                <table>
-                    <div class="txt_field">
-                        Username
-                        <input type="text" name="username" placeholder="Your Username" class="form-control">
-                    </div>
-                            
-                    <div class="txt_field">
-                        Password
-                        <input type="password" name="password" placeholder="Your Password" class="form-control">
-                    </div>
+        <setfield>
+        <form method="POST" action="">
+            {% csrf_token %}
+            <table>
+                <div class="txt_field">
+                    Username
+                    <input type="text" name="username" placeholder="Your Username" class="form-control">
+                </div>
+                        
+                <div class="txt_field">
+                    Password
+                    <input type="password" name="password" placeholder="Your Password" class="form-control">
+                </div>
 
-                    <tr>
-                        <input class="btn login_btn" type="SUBMIT" value="Login">
-                    </tr>
-                </table>
-            </form>
+                <tr>
+                    <input class="btn login_btn" type="SUBMIT" value="Login">
+                </tr>
+            </table>
+        </form>
 
-            {% if messages %}
-                <ul>
-                    {% for message in messages %}
-                        <li>{{ message }}</li>
-                    {% endfor %}
-                </ul>
-            {% endif %}     
-            
-            <div class="signup_link">
-                Don't have an account yet? <a href="{% url 'todolist:register' %}">Create Account</a>
-            </div>
-            
-            </setfield>
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}     
+        
+        <div class="signup_link">
+            Don't have an account yet? <a href="{% url 'todolist:register' %}">Create Account</a>
+        </div>
+        
+        </setfield>
     </div>
+</div>
+</html>
 
 {% endblock content %}

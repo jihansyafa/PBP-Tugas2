@@ -1,10 +1,10 @@
-body {
+html {
     font-family: 'Poppins', sans-serif;
     background:  linear-gradient(to bottom, #91dee8, #8c92d4);
-    height: 100vh;
-  }
+    min-height: 100%;
+}
   
-  setfield {
+setfield {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -14,20 +14,20 @@ body {
     width: 400px;
     background: #ffffff;
     border-style: none;
-  }
-  
-  .login {
+}
+
+.login {
     text-align: center;
     padding: 10px ;
-  }
+}
 
-  form .txt_field {
+form .txt_field {
     position: center;
     border-bottom: 2px solid #adadad;
     margin: 25px;
-  }
-  
-  .txt_field input {
+}
+
+.txt_field input {
     width: 100%;
     padding: 0 5px;
     height: 40px;
@@ -35,9 +35,9 @@ body {
     border: none;
     outline: none;
     background: none;
-  }
-  
-  input[type="SUBMIT"] {
+}
+
+input[type="SUBMIT"] {
     width: 60%;
     height: 45px;
     border: 1px solid;
@@ -47,26 +47,31 @@ body {
     color: #ffffff;
     font-weight: bold; 
     font-family: 'Poppins';
-  }
-  
-  input[type="submit"]:hover {
+}
+
+input[type="submit"]:hover {
     border-color: #000000;
     transition: .5s;
-  }
-  
-  .signup_link {
+}
+
+.signup_link {
     margin: 30px 0;
     color: #666666;
     text-align: center;
     font-size: 14px; 
-  }
-  
-  .signup_link a {
+}
+
+.signup_link a {
     text-decoration: none;
     color: #2691d9;
-  }
-  
-  .signup_link a:hover {
+}
+
+.signup_link a:hover {
     text-decoration: underline;
-  }
+}
+
+.set-responsive {
+    display: flex;
+    justify-content: space-around;
+ }
   

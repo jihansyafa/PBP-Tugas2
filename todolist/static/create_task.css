@@ -58,5 +58,10 @@ body {
     border-color: #000000;
     transition: .5s;
   }
+
+  .set-responsive {
+    display: flex;
+    justify-content: space-around;
+  }
   
   
