@@ -83,14 +83,15 @@
     }
 
     function addTodolist() {
-        document.getElementById('title_input').value = ''
-        document.getElementById('desc_input').value = ''
-
         document.getElementById('modal_container').style.display = "none"
         fetch("{% url 'todolist:create_task_ajax' %}", {
             method: "POST",
             body: new FormData(document.querySelector('#new_form'))
         }).then(refreshTodolist)
+
+        document.getElementById('title_input').value = ''
+        document.getElementById('desc_input').value = ''
+        
         return false
     }
 
