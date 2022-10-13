@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+<title>My To Do List</title>
+{% endblock meta %}
+
+{% block content %}
+
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'todolist.css' %}">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+</head>
+
+<html>
+    <h1>Hi {{user.username}}, this is your To Do List!</h1>
+
+    <button id="new-task-button" class = "new-task-button">New Task</button>
+
+    <a href="{% url 'todolist:logout' %}">
+    <button class = "logout-button">Logout</button></a>
+
+    <div id = "todolistCards"></div>
+
+    <div id="modal_container" class="modal_container"> 
+        <div id="modal" class="modal">
+            <div class = "create_task">
+    
+                <h1>Create New Task</h1>
+    
+                <form id="new_form" method="POST" action="/todolist/create-task-ajax/">
+                    <setfield>
+                    {% csrf_token %}
+                    <table>
+                        <div class="txt_field">
+                            Task Title :
+                            <input id="title_input" type="text" name="title" placeholder="Enter Your Task Title" class="form-control">
+                        </div>
+                                
+                        <div class="txt_field">
+                            Description :
+                            <input id="desc_input" type="text" name="description" placeholder="Enter Your Task Description" class="form-control">
+                        </div>
+    
+                        <input id="create_task" class="btn create_task" type="SUBMIT" value="Add Task">
+
+                    </table>
+                    </setfield>
+                </form>
+                <button id="btn_cancel" class="btn btn_cancel">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+<script>
+    async function getTodolist() {
+        return fetch("{% url 'todolist:show_json' %}").then((res) => res.json())
+    }
+
+    async function refreshTodolist() {
+        document.getElementById("todolistCards").innerHTML = ""
+        const todolist = await getTodolist()
+        let htmlString = ``
+
+        todolist.forEach((task) => {
+            htmlString += `\n
+            <div class = "set-responsive">
+                <div class = "card">
+                    <p class = "task-title">${task.fields.title}</p>
+                    <p class = "task-description">${task.fields.description}</p>
+                    <p class = "task-date"> Created on : ${task.fields.date}</p>
+
+                    <div class="button-task">
+                        <button class="button">
+                            <a onclick="deleteTodolist(${task.pk})">Delete</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            ` 
+        })
+        document.getElementById("todolistCards").innerHTML = htmlString
+    }
+
+    function addTodolist() {
+        document.getElementById('title_input').value = ''
+        document.getElementById('desc_input').value = ''
+
+        document.getElementById('modal_container').style.display = "none"
+        fetch("{% url 'todolist:create_task_ajax' %}", {
+            method: "POST",
+            body: new FormData(document.querySelector('#new_form'))
+        }).then(refreshTodolist)
+        return false
+    }
+
+    function showModal() {
+        document.getElementById('modal_container').style.display = "flex"
+    }
+
+    function cancelButton() {
+        document.getElementById('modal_container').style.display = "none"
+    }
+
+    function deleteTodolist(id) {
+        let url = "/todolist/delete-task-ajax/" + id;
+        fetch(url).then(refreshTodolist)
+    }
+
+    document.getElementById('new-task-button').onclick = showModal
+    document.getElementById('btn_cancel').onclick = cancelButton
+    document.getElementById('create_task').onclick = addTodolist
+
+    refreshTodolist()
+
+</script>
+
+</html>
+{% endblock content %}

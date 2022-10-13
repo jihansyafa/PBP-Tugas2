@@ -7,6 +7,8 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from todolist.models import Task
+from django.http import HttpResponse, JsonResponse
+from django.core import serializers
 
 
 @login_required(login_url='/todolist/login/')
@@ -17,6 +19,13 @@ def show_todolist(request):
         'user' : request.user
     }
     return render(request, "todolist.html", context)
+
+@login_required(login_url='/todolist/login/')
+def show_todolist_ajax(request):
+    context = {
+        'user' : request.user
+    }
+    return render(request, "todolist_ajax.html", context)
 
 
 def register(request):
@@ -59,13 +68,27 @@ def create_task(request):
         title = request.POST.get("title")
         description = request.POST.get("description")
         Task.objects.create(
-            user=request.user,
-            title=title,
-            description=description,
+            user = request.user,
+            title = title,
+            description = description,
         )
         return redirect('todolist:show_todolist')
     return render(request, 'create_task.html')
 
+
+@login_required(login_url='/todolist/login/')
+def create_task_ajax(request):
+    if request.method == "POST":
+        title = request.POST.get("title")
+        description = request.POST.get("description")
+        Task.objects.create(
+            user = request.user,
+            title = title,
+            description = description,
+        )
+        return HttpResponse(b"CREATED", status=201)
+    return HttpResponse(b"ADDING", status=200)
+    
 
 def logout_user(request):
     logout(request)
@@ -87,3 +110,14 @@ def delete_task(request, id):
     task = Task.objects.get(id=id)
     task.delete()
     return redirect('todolist:show_todolist')
+
+@login_required(login_url="/todolist/login/")
+def delete_task_ajax(request, id):
+    task = Task.objects.filter(user=request.user).get(id=id)
+    task.delete()
+    return HttpResponse(b"DELETED", status=204)
+
+def show_json(request):
+    data = Task.objects.filter(user = request.user)
+    return HttpResponse(serializers.serialize("json", data), content_type="application/json")
+
